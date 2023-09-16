@@ -1,0 +1,70 @@
+
+Var
+mulherespar,mulheres20,mediahomens:real
+numero,numeropesoal,mulheres,par,idade,i,homens:inteiro
+sexo,nome,nomevencedores:caractere
+Inicio
+par<-0
+mulheres<-0
+mulheres20<-0
+mulherespar<-0
+mediahomens<-0
+para i de 1 ate 10 faca
+	escreva("informe o nome da ",i,"° pessoa: ")
+	leia(nome)
+	escreva("agora informe a idade da pessoa: ")
+	leia (idade)
+	escreva("agora informe o sexo da pessoa: ")
+	leia (sexo)
+	se (sexo<>"F") e (sexo<>"f") e (sexo<>"M") e (sexo<>"m") entao
+		repita
+			escreva("o sexo informado esta errado, informe novamente(F/M): ")
+			leia (sexo)
+		ate (sexo="F") ou (sexo="f") ou (sexo="M") ou (sexo="m")
+	fimse
+	escreva("agora informe o numero selecionado")
+	leia(numeropesoal)
+	numero<-randi(100)+1
+	se ("numero=numeropesoal") entao
+		nomevencedores<-nomevencedores+" " nome
+	fimse
+	se (sexo="F") ou (sexo="f") entao
+		mulheres<-mulheres+1
+		se (numeropesoal%2=0) entao
+			mulherespar<-mulherespar+1
+		fimse
+		se(idade>=20) entao
+		mulheres20<-mulheres20+1
+		fimse
+	senao
+		homens<-homens+1
+		mediahomens<-mediahomens+idade
+	fimse
+	se (numero%2=0) entao
+		par<-par+1
+fimpara
+escreval("o numero sortiado era ",numero)
+escreval("as pessoas sortudas foram: ",nomevencedores)
+mulherespar<-(mulherespar/10)*100
+escreval("um total de ",mulherespar,"% de pessoas sao mulheres que escolheram par")
+escreval("um total de ",par,"pessoas escolheram um numero par")
+mulheres20<-(mulheres20/10)*100
+mediahomens<-mediahomens/homens
+escreval("a media de idade dos homens é de ",mediahomens," anos")
+escreval("um total de ",mulheres20,"% das pessoas sao mulheres que tem mais de 20 anos")
+se (numero=2) ou (numero=3) ou (numero=5) ou (numero=7) ou (numero=11) ou (numero=13) ou (numero=17) ou (numero=19) entao
+	escreval("o numero sorteado é um numero primo")
+senao 
+	se (numero=23) ou (numero=29) ou (numero=31) ou (numero=37) ou (numero=41) ou (numero=43) ou (numero=47) ou (numero=53) ou (numero=59) entao
+		escreval("o numero sorteado é um numero primo")
+	senao
+		se (numero=61) ou (numero=67) ou (numero=71) ou (numero=73) ou (numero=79) ou (numero=83) ou (numero=89) ou (numero=97)
+			escreval("o numero sorteado é um numero primo")
+		senao
+			escreval("o numero sorteado não é um numero primo")
+		fimse
+	fimse
+fimse
+
+	
+Fimalgoritmo
