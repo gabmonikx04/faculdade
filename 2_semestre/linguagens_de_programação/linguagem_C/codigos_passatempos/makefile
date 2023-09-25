@@ -1,7 +1,7 @@
 comp:
-	gcc -g $$PROGRAMA.c -o $$PROGRAMA_exe
+	gcc -g $$PROGRAMA.c -o $$PROGRAMA.out 
 exe:
-	./$$PROGRAMA_exe
+	./$$PROGRAMA.out 
 comxe:
 	make comp
 	make exe
@@ -11,6 +11,6 @@ zipa:
 	zip -r lista.zip lista/
 	rm -r lista
 debug:
-	gdb $$PROGRAMA_exe
+	gdb $$PROGRAMA.out  
 ray:
-	g++ $$PROGRAMA.c -lraylib -lGL -lm -lpthread -ldl -lrt -lX11 -o $$PROGRAMA_exe
+	g++ $$PROGRAMA.c -lraylib -lGL -lm -lpthread -ldl -lrt -lX11 -o $$PROGRAMA.out 

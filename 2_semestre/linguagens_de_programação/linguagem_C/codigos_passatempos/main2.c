@@ -2,35 +2,42 @@
 
 int main(void)
 {
+    struct esfera
+    {
+        int x,y,r;
+    };
+    
     const int screenWidth = 1600;
     const int screenHeight = 800;
 
     InitWindow(screenWidth, screenHeight, "jorguinho");
     SetTargetFPS(60);
-
+    struct esfera bola;
+    bola.x = 100.;
+    bola.y = 400
     float bola_x = 100, bola_y = 400, bolam_x = 1500, bolam_y = 400, bola_raio = 15, bolam_raio = 15;
     int x = 1, ponto = 0, z = 1;
     int score = 0, pontuacao = 1, velocidade = 1, mau, bem;
 
     while (!WindowShouldClose()) {
         // Movimentação da bola boa
-        if (IsKeyDown(KEY_RIGHT) && bola_x <= 1580 && x == 1)
-            bola_x += (2 * bem);
-        if (IsKeyDown(KEY_LEFT) && bola_x >= 15 && x == 1)
-            bola_x -= (2 * bem);
-        if (IsKeyDown(KEY_UP) && bola_y >= 15 && x == 1)
-            bola_y -= (2 * bem);
-        if (IsKeyDown(KEY_DOWN) && bola_y <= 780 && x == 1)
-            bola_y += (2 * bem);
+        if (IsKeyDown(KEY_RIGHT) && bola.x <= 1580 && x == 1)
+            bola.x += (2 * bem);
+        if (IsKeyDown(KEY_LEFT) && bola.x >= 15 && x == 1)
+            bola.x -= (2 * bem);
+        if (IsKeyDown(KEY_UP) && bola.y >= 15 && x == 1)
+            bola.y -= (2 * bem);
+        if (IsKeyDown(KEY_DOWN) && bola.y <= 780 && x == 1)
+            bola.y += (2 * bem);
 
         // Bola do mau
-        if (bolam_x > bola_x)
+        if (bolam_x > bola.x)
             bolam_x -= (1 * mau);
-        if (bolam_x < bola_x)
+        if (bolam_x < bola.x)
             bolam_x += (1 * mau);
-        if (bolam_y > bola_y)
+        if (bolam_y > bola.y)
             bolam_y -= (1 * mau);
-        if (bolam_y < bola_y)
+        if (bolam_y < bola.y)
             bolam_y += (1 * mau);
 
         Rectangle rect = {300, 250, 100, 300};
