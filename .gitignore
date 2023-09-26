@@ -1,3 +1,6 @@
 #ignorar executaveis
 *.out
 *.exe
+#ignorar compactados
+*.zip
+*.rar
