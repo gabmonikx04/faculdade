@@ -29,5 +29,5 @@ int main()
             strcat(string1,string2[z-d]);
         }
     }
-    printf("a frase ao contrario fica como: %s",string1);
+    printf("a frase ao contrario fica como: %s\n",string1);
 }
